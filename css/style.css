@@ -1170,6 +1170,205 @@ img {
     .contact-form {
         padding: 25px;
     }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer h4 {
+        font-size: 1.1rem;
+    }
+
+    .testimonial-card {
+        flex: 0 0 280px;
+    }
+
+    .testimonials-slider {
+        padding: 10px 0;
+    }
+
+    .step-card {
+        margin-bottom: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        gap: 15px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-icon {
+        margin-bottom: 10px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 16px;
+    }
+
+    .facilities-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-image {
+        height: 150px;
+    }
+
+    .philosophy-visual .tree-visual {
+        width: 200px;
+        height: 250px;
+    }
+
+    .program-details {
+        gap: 15px;
+    }
+
+    .program-detail-item {
+        padding: 15px;
+    }
+
+    .feature-card {
+        margin-bottom: 20px;
+    }
+
+    .pillar-card {
+        padding: 30px 20px;
+    }
+
+    .domain-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-page {
+        min-height: 50vh;
+        padding-top: 80px;
+    }
+
+    .hero-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-page p {
+        font-size: 0.95rem;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .pillar-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pillar-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pillar-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .pillar-card p {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card {
+        flex: 0 0 250px;
+        padding: 25px;
+    }
+
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .location-map iframe {
+        height: 250px;
+    }
+
+    .contact-map iframe {
+        height: 200px;
+    }
+
+    .educator-card {
+        padding: 20px;
+    }
+
+    .educator-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
 }
 
 @keyframes fadeInUp {
