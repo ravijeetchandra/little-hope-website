@@ -70,38 +70,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        emailjs.init('YOUR_PUBLIC_KEY');
-
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = '[ Sending... ]';
-            submitBtn.disabled = true;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const childAge = document.getElementById('child-age').value;
+            const tourDate = document.getElementById('tour-date').value;
+            const message = document.getElementById('message').value;
 
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                child_age: document.getElementById('child-age').value,
-                tour_date: document.getElementById('tour-date').value,
-                message: document.getElementById('message').value
-            };
+            const whatsappMessage = `Hello! I'd like to inquire about Little Hope Play School.
 
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                .then(function() {
-                    contactForm.style.display = 'none';
-                    document.getElementById('formSuccess').style.display = 'block';
-                    contactForm.reset();
-                }, function(error) {
-                    alert('[x] Sorry, there was an error. Please try again or contact us directly.');
-                    console.log('EmailJS Error:', error);
-                })
-                .finally(function() {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
+*Name:* ${name}
+*Phone:* ${phone}
+*Child's Age:* ${childAge}
+*Preferred Tour Date:* ${tourDate || 'To be decided'}
+*Message:* ${message || 'None'}
+
+Looking forward to hearing from you!`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            const whatsappURL = `https://wa.me/918210974339?text=${encodedMessage}`;
+
+            window.open(whatsappURL, '_blank');
+
+            const formSuccess = document.getElementById('formSuccess');
+            formSuccess.style.display = 'block';
+            contactForm.reset();
+
+            setTimeout(() => {
+                formSuccess.style.display = 'none';
+            }, 5000);
         });
     }
 
