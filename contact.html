@@ -12,13 +12,14 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <svg viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" fill="#5D8A66"/>
-                    <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="4" fill="none"/>
-                    <circle cx="40" cy="45" r="5" fill="white"/>
-                    <circle cx="60" cy="45" r="5" fill="white"/>
-                    <path d="M40 60 Q50 70 60 60" stroke="white" stroke-width="3" fill="none"/>
-                </svg>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="5" fill="none"/>
+                        <circle cx="40" cy="45" r="6" fill="white"/>
+                        <circle cx="60" cy="45" r="6" fill="white"/>
+                        <path d="M40 62 Q50 72 60 62" stroke="white" stroke-width="4" fill="none"/>
+                    </svg>
+                </div>
                 Little Hope
             </a>
             <ul class="nav-links">
@@ -28,11 +29,14 @@
                 <li><a href="admissions.html">Admissions</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">Book Free Tour</a>
             </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -42,36 +46,38 @@
         <a href="curriculum.html">Curriculum</a>
         <a href="admissions.html">Admissions</a>
         <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary mt-lg">Book Free Tour</a>
     </div>
 
-    <section class="hero-page" style="background: linear-gradient(135deg, var(--pale-yellow) 0%, var(--cream) 100%);">
+    <section class="hero-page">
         <div class="container">
-            <h1>Get in Touch</h1>
-            <p>We'd love to hear from you. Reach out to schedule a tour, ask questions, or simply learn more about Little Hope.</p>
+            <span class="badge badge-primary">Get in Touch</span>
+            <h1>We'd Love to Hear from You</h1>
+            <p>Reach out to schedule a tour, ask questions, or simply learn more about Little Hope.</p>
         </div>
     </section>
 
-    <section class="section contact-section">
+    <section class="section section-white">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-form animate-on-scroll">
-                    <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.6rem;">Send Us a Message</h3>
+                <div class="contact-form-card">
+                    <h2 style="color: var(--primary);">Send Us a Message</h2>
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <input type="text" id="name" class="form-input" name="name" required placeholder="Enter your full name">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXXXXXXX">
+                            <input type="tel" id="phone" class="form-input" name="phone" required placeholder="+91 XXXXXXXXXX">
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <input type="email" id="email" class="form-input" name="email" required placeholder="your.email@example.com">
                         </div>
                         <div class="form-group">
                             <label for="child-age">Child's Age/Grade Level *</label>
-                            <select id="child-age" name="child-age" required>
+                            <select id="child-age" class="form-input" name="child-age" required>
                                 <option value="">Select age group</option>
                                 <option value="2">2 years old</option>
                                 <option value="3">3 years old</option>
@@ -82,126 +88,141 @@
                         </div>
                         <div class="form-group">
                             <label for="tour-date">Preferred Tour Date</label>
-                            <input type="date" id="tour-date" name="tour-date">
+                            <input type="date" id="tour-date" class="form-input" name="tour-date">
                         </div>
                         <div class="form-group">
                             <label for="message">Message (Optional)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Any questions or special requirements?"></textarea>
+                            <textarea id="message" class="form-textarea" name="message" rows="4" placeholder="Any questions or special requirements?"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry & Book Tour</button>
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Inquiry & Book Tour</button>
                     </form>
-                    <div id="formSuccess" style="display: none; margin-top: 20px; padding: 15px; background: var(--primary); color: white; border-radius: 10px; text-align: center;">
+                    <div id="formSuccess" class="form-success" style="display: none;">
                         <p>Thank you! Your message has been sent successfully. We will contact you within 24 hours.</p>
                     </div>
                 </div>
-                <div class="contact-info animate-on-scroll">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Visit Us</h4>
-                                <p>Little Hope Play School<br>Arogya Bhawan Road, Opposite Jasidih School<br>Jasidih, India 814142</p>
-                            </div>
+                <div class="contact-info-card">
+                    <h2 style="color: var(--primary);">Contact Information</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p><a href="tel:+918210974339">+91 8210974339</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p><a href="mailto:littlehopeplayschool@gmail.com">littlehopeplayschool@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon" style="background: linear-gradient(135deg, #C13584, #833AB4);">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Follow Us</h4>
-                                <p><a href="https://instagram.com/little_hope_jasidih" target="_blank">@little_hope_jasidih</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Office Hours</h4>
-                                <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
-                            </div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Little Hope Play School<br>Arogya Bhawan Road, Opposite Jasidih School<br>Jasidih, India 814142</p>
                         </div>
                     </div>
-                    <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.5!2d86.6458!3d24.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f10530f6f5f0c7%3A0x6b4f4c5a9e3d1f2a!2sJasidih%20School!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="contact-item">
+                        <div class="contact-icon contact-icon-teal">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <a href="tel:+918210974339" style="color: var(--primary); font-weight: 600;">+91 8210974339</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon contact-icon-purple">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <a href="mailto:littlehopeplayschool@gmail.com" style="color: var(--primary);">littlehopeplayschool@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon contact-icon-orange">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Follow Us</h4>
+                            <a href="https://instagram.com/little_hope_jasidih" target="_blank" style="color: var(--purple); font-weight: 600;">@little_hope_jasidih</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Mon-Fri: 9:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM<br>Sun: Closed</p>
+                        </div>
+                    </div>
+                    <div class="map-container" style="margin-top: 24px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.5!2d86.6458!3d24.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f10530f6f5f0c7%3A0x6b4f4c5a9e3d1f2a!2sJasidih%20School!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: var(--cream);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Ready to Join Our Family?</h2>
-                <p>Schedule a visit today and see the Little Hope difference for yourself.</p>
-            </div>
-            <div style="text-align: center;">
-                <a href="admissions.html" class="btn btn-primary">View Admission Process</a>
-            </div>
+    <section class="section section-gradient">
+        <div class="container text-center">
+            <h2 style="color: var(--on-primary); margin-bottom: 16px;">Ready to Join Our Family?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin-bottom: 24px;">Schedule a visit today and see the Little Hope difference for yourself.</p>
+            <a href="admissions.html" class="btn btn-white btn-lg">View Admission Process</a>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h4>Little Hope Play School</h4>
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: var(--on-primary);">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 100 100">
+                                <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="5" fill="none"/>
+                                <circle cx="40" cy="45" r="6" fill="white"/>
+                                <circle cx="60" cy="45" r="6" fill="white"/>
+                            </svg>
+                        </div>
+                        Little Hope
+                    </a>
                     <p>Nurturing curious minds and building confident futures through compassionate, child-led learning in Jasidih.</p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
-                    <p><a href="index.html">Home</a></p>
-                    <p><a href="about.html">About Us</a></p>
-                    <p><a href="curriculum.html">Curriculum</a></p>
-                    <p><a href="admissions.html">Admissions</a></p>
-                    <p><a href="contact.html">Contact</a></p>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>Arogya Bhawan Road</li>
+                        <li>Opposite Jasidih School</li>
+                        <li>Jasidih, India 814142</li>
+                        <li style="margin-top: 12px;"><a href="tel:+918210974339">+91 8210974339</a></li>
+                        <li><a href="mailto:littlehopeplayschool@gmail.com">littlehopeplayschool@gmail.com</a></li>
+                    </ul>
                 </div>
                 <div>
                     <h4>Follow Us</h4>
-                    <p><a href="https://instagram.com/little_hope_jasidih" target="_blank">Instagram: @little_hope_jasidih</a></p>
-                </div>
-                <div>
-                    <h4>Contact Us</h4>
-                    <p>Arogya Bhawan Road, Opposite Jasidih School</p>
-                    <p>Jasidih, India 814142</p>
-                    <p>Phone: +91 8210974339</p>
-                    <p>Email: littlehopeplayschool@gmail.com</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/little_hope_jasidih" target="_blank">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Little Hope Play School, Jasidih. All rights reserved.</p>
+                <p>2026 Little Hope Play School, Jasidih. All rights reserved.</p>
+                <p>Made with love for our little ones</p>
             </div>
         </div>
     </footer>

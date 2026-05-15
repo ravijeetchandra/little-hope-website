@@ -6,18 +6,20 @@
     <title>Little Hope Play School, Jasidih | Where Play Meets Potential</title>
     <meta name="description" content="Little Hope Play School in Jasidih: Nurturing curious minds through compassionate, child-led learning. Book your free tour today!">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <svg viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" fill="#5D8A66"/>
-                    <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="4" fill="none"/>
-                    <circle cx="40" cy="45" r="5" fill="white"/>
-                    <circle cx="60" cy="45" r="5" fill="white"/>
-                    <path d="M40 60 Q50 70 60 60" stroke="white" stroke-width="3" fill="none"/>
-                </svg>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="5" fill="none"/>
+                        <circle cx="40" cy="45" r="6" fill="white"/>
+                        <circle cx="60" cy="45" r="6" fill="white"/>
+                        <path d="M40 62 Q50 72 60 62" stroke="white" stroke-width="4" fill="none"/>
+                    </svg>
+                </div>
                 Little Hope
             </a>
             <ul class="nav-links">
@@ -27,11 +29,14 @@
                 <li><a href="admissions.html">Admissions</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">Book Free Tour</a>
             </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -41,34 +46,42 @@
         <a href="curriculum.html">Curriculum</a>
         <a href="admissions.html">Admissions</a>
         <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary mt-lg">Book Free Tour</a>
     </div>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Where <span>Play Meets</span> Potential</h1>
-                <p><strong>Little Hope Play School, Jasidih:</strong> Nurturing curious minds and building confident futures through compassionate, child-led learning.</p>
-                <p>Give your child the foundation they need to shine. We blend proven academic concepts with the joy of discovery, ensuring every day is an adventure.</p>
-                <div class="hero-btns">
-                    <a href="contact.html" class="btn btn-primary">Book Your Free Tour Today</a>
-                    <a href="curriculum.html" class="btn btn-secondary">View Our Curriculum Guide</a>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="badge badge-secondary">Play School in Jasidih</span>
+                    <h1>Where <span>Play Meets</span> Potential</h1>
+                    <p>Nurturing curious minds and building confident futures through compassionate, child-led learning. Give your child the foundation they need to shine!</p>
+                    <div class="hero-btns">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            Book Your Free Tour Today
+                        </a>
+                        <a href="curriculum.html" class="btn btn-secondary btn-lg">
+                            View Our Curriculum
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=400&fit=crop" alt="Children playing joyfully">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=450&fit=crop" alt="Happy children playing and learning">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section trust-pillars">
+    <section class="section section-white">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Why Parents Love Us</span>
                 <h2>Why Choose Little Hope?</h2>
                 <p>We believe every child is unique, and our approach reflects that belief. Here's what sets us apart.</p>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-card animate-on-scroll">
-                    <div class="pillar-icon">
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon card-icon-pink">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
@@ -76,19 +89,19 @@
                     <h3>Holistic Growth</h3>
                     <p>We don't just teach letters; we nurture whole human beings. Our curriculum focuses equally on cognitive, motor, and emotional intelligence, ensuring balanced, confident development.</p>
                 </div>
-                <div class="pillar-card animate-on-scroll">
-                    <div class="pillar-icon">
+                <div class="card">
+                    <div class="card-icon card-icon-teal">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                         </svg>
                     </div>
-                    <h3>Safe & Loving Environment</h3>
+                    <h3>Safe & Loving</h3>
                     <p>We are dedicated to being the safest and most nurturing space for young learners in Jasidih. Our campus is designed with safety first, allowing curiosity to flourish worry-free.</p>
                 </div>
-                <div class="pillar-card animate-on-scroll">
-                    <div class="pillar-icon">
+                <div class="card">
+                    <div class="card-icon card-icon-yellow">
                         <svg viewBox="0 0 24 24">
-                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                         </svg>
                     </div>
                     <h3>Experienced Mentors</h3>
@@ -98,34 +111,36 @@
         </div>
     </section>
 
-    <section class="section curriculum-sneak">
+    <section class="section section-soft">
         <div class="container">
-            <div class="curriculum-content">
-                <div class="curriculum-text animate-on-scroll">
-                    <h3>Learning Through Wonder, Not Workbooks</h3>
-                    <p>At Little Hope, we believe that the most profound learning happens during play. Our Child-led learning model utilizes play-based activities, incorporating elements of nature, art, and exploration to make every subject come alive.</p>
-                    <p>From dramatic play that builds empathy to hands-on projects that ignite scientific curiosity, your child's journey is designed to be joyful and meaningful.</p>
-                    <a href="curriculum.html" class="btn btn-primary">Download Our Curriculum Guide</a>
+            <div class="grid-2">
+                <div>
+                    <span class="section-label">Our Approach</span>
+                    <h2 style="font-size: 32px; margin-bottom: 16px;">Learning Through Wonder, Not Workbooks</h2>
+                    <p class="text-mute" style="font-size: 17px; line-height: 1.8; margin-bottom: 20px;">At Little Hope, we believe that the most profound learning happens during play. Our Child-led learning model utilizes play-based activities, incorporating elements of nature, art, and exploration to make every subject come alive.</p>
+                    <p class="text-mute" style="font-size: 17px; line-height: 1.8; margin-bottom: 24px;">From dramatic play that builds empathy to hands-on projects that ignite scientific curiosity, your child's journey is designed to be joyful and meaningful.</p>
+                    <a href="curriculum.html" class="btn btn-primary">Explore Our Curriculum</a>
                 </div>
-                <div class="curriculum-image animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=350&fit=crop" alt="Child learning through play">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=380&fit=crop" alt="Child learning through play" style="border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section testimonials">
+    <section class="section section-white">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Parent Reviews</span>
                 <h2>What Parents Say</h2>
                 <p>Hear from families in our community about their Little Hope experience.</p>
             </div>
-            <div class="testimonials-slider">
+            <div class="testimonial-slider">
                 <div class="testimonial-card">
                     <p>"Our child genuinely loves going to Little Hope. The staff are so caring, and we feel constantly updated on their development. Thank you for making learning feel like play!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">PS</div>
-                        <div class="author-info">
+                        <div class="testimonial-avatar">PS</div>
+                        <div class="testimonial-info">
                             <h4>Priya Sharma</h4>
                             <span>Jasidih</span>
                         </div>
@@ -134,8 +149,8 @@
                 <div class="testimonial-card">
                     <p>"As a parent, I was worried about the switch. But the environment is so calm and engaging. It's the best early childhood education we could have asked for."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">RM</div>
-                        <div class="author-info">
+                        <div class="testimonial-avatar">RM</div>
+                        <div class="testimonial-info">
                             <h4>Rahul Mehra</h4>
                             <span>Jasidih</span>
                         </div>
@@ -144,49 +159,52 @@
                 <div class="testimonial-card">
                     <p>"The focus on holistic development is what sets us apart. They genuinely care about the child, not just the grades."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">NB</div>
-                        <div class="author-info">
+                        <div class="testimonial-avatar">NB</div>
+                        <div class="testimonial-info">
                             <h4>Neha Bansal</h4>
                             <span>Jasidih</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
-    <section class="section" style="background: var(--white);">
+    <section class="section section-soft">
         <div class="container">
             <div class="section-header">
-                <h2>Follow Our Journey</h2>
-                <p>See daily moments of joy, learning, and growth at Little Hope.</p>
+                <span class="section-label">Follow Us</span>
+                <h2>See Our Happy Little Ones</h2>
+                <p>Follow our journey on Instagram for daily moments of joy, learning, and growth!</p>
             </div>
-            <div style="text-align: center; margin-bottom: 30px;">
-                <a href="https://instagram.com/little_hope_jasidih" target="_blank" class="btn btn-primary" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+            <div style="text-align: center;">
+                <a href="https://instagram.com/little_hope_jasidih" target="_blank" class="social-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                     </svg>
                     Follow @little_hope_jasidih
                 </a>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=300&h=300&fit=crop" alt="Children playing" style="border-radius: 15px; width: 100%; height: 200px; object-fit: cover;">
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&h=300&fit=crop" alt="Child learning" style="border-radius: 15px; width: 100%; height: 200px; object-fit: cover;">
-                <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=300&h=300&fit=crop" alt="Toddler activity" style="border-radius: 15px; width: 100%; height: 200px; object-fit: cover;">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop" alt="Art activity" style="border-radius: 15px; width: 100%; height: 200px; object-fit: cover;">
+            <div class="social-gallery">
+                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=300&h=200&fit=crop" alt="Children playing">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&h=200&fit=crop" alt="Child learning">
+                <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=300&h=200&fit=crop" alt="Toddler activity">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop" alt="Art activity">
             </div>
         </div>
     </section>
 
-    <section class="section location-tease">
+    <section class="section section-white">
         <div class="container">
-            <div class="location-content">
-                <div class="location-text animate-on-scroll">
-                    <h3>Join Our Little Hope Family</h3>
-                    <p>Located in the heart of Jasidih, Little Hope is easily accessible and surrounded by a supportive community. We invite you to visit us and experience the warmth of our learning environment.</p>
-                    <a href="contact.html" class="btn btn-primary">See Our Full Location Details</a>
+            <div class="grid-2">
+                <div>
+                    <span class="section-label">Visit Us</span>
+                    <h2 style="font-size: 32px; margin-bottom: 16px;">Join Our Little Hope Family</h2>
+                    <p class="text-mute" style="font-size: 17px; line-height: 1.8; margin-bottom: 24px;">Located in the heart of Jasidih, Little Hope is easily accessible and surrounded by a supportive community. We invite you to visit us and experience the warmth of our learning environment.</p>
+                    <a href="contact.html" class="btn btn-primary">Get Directions & Contact Info</a>
                 </div>
-                <div class="location-map animate-on-scroll">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.5!2d86.6458!3d24.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f10530f6f5f0c7%3A0x6b4f4c5a9e3d1f2a!2sJasidih%20School!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.5!2d86.6458!3d24.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f10530f6f5f0c7%3A0x6b4f4c5a9e3d1f2a!2sJasidih%20School!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -195,32 +213,53 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h4>Little Hope Play School</h4>
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: var(--on-primary);">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 100 100">
+                                <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="5" fill="none"/>
+                                <circle cx="40" cy="45" r="6" fill="white"/>
+                                <circle cx="60" cy="45" r="6" fill="white"/>
+                            </svg>
+                        </div>
+                        Little Hope
+                    </a>
                     <p>Nurturing curious minds and building confident futures through compassionate, child-led learning in Jasidih.</p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
-                    <p><a href="index.html">Home</a></p>
-                    <p><a href="about.html">About Us</a></p>
-                    <p><a href="curriculum.html">Curriculum</a></p>
-                    <p><a href="admissions.html">Admissions</a></p>
-                    <p><a href="contact.html">Contact</a></p>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>Arogya Bhawan Road</li>
+                        <li>Opposite Jasidih School</li>
+                        <li>Jasidih, India 814142</li>
+                        <li style="margin-top: 12px;"><a href="tel:+918210974339">+91 8210974339</a></li>
+                        <li><a href="mailto:littlehopeplayschool@gmail.com">littlehopeplayschool@gmail.com</a></li>
+                    </ul>
                 </div>
                 <div>
                     <h4>Follow Us</h4>
-                    <p><a href="https://instagram.com/little_hope_jasidih" target="_blank">Instagram: @little_hope_jasidih</a></p>
-                </div>
-                <div>
-                    <h4>Contact Us</h4>
-                    <p>Arogya Bhawan Road, Opposite Jasidih School</p>
-                    <p>Jasidih, India 814142</p>
-                    <p>Phone: +91 8210974339</p>
-                    <p>Email: littlehopeplayschool@gmail.com</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/little_hope_jasidih" target="_blank">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Little Hope Play School, Jasidih. All rights reserved.</p>
+                <p>2026 Little Hope Play School, Jasidih. All rights reserved.</p>
+                <p>Made with love for our little ones</p>
             </div>
         </div>
     </footer>
