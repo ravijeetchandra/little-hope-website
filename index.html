@@ -1,269 +1,1768 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Hope Play School, Jasidih | Where Play Meets Potential</title>
-    <meta name="description" content="Little Hope Play School in Jasidih: Nurturing curious minds through compassionate, child-led learning. Book your free tour today!">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Hope Play School, Jasidih | Where Play Meets Potential</title>
+  <meta name="description" content="Little Hope Play School in Jasidih: Nurturing curious minds through compassionate, child-led learning. Book your free tour today!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FFFDF5;
+      --warm-white: #FFF9EE;
+      --pale-yellow: #FFF3D0;
+      --sage: #7FB069;
+      --sage-dark: #5A8A49;
+      --sage-light: #EAF4E2;
+      --sunflower: #F4A535;
+      --sunflower-light: #FFF0CC;
+      --blush: #F2856A;
+      --blush-light: #FFF0EC;
+      --sky: #6BB5D6;
+      --sky-light: #EBF6FC;
+      --lavender: #A89AC8;
+      --lavender-light: #F2EEFF;
+      --brown: #7C5C3E;
+      --text-dark: #2C2416;
+      --text-mid: #5C4C38;
+      --text-soft: #8C7A66;
+      --border: rgba(124,92,62,0.12);
+      --shadow-sm: 0 2px 12px rgba(124,92,62,0.08);
+      --shadow-md: 0 6px 28px rgba(124,92,62,0.12);
+      --r-sm: 12px;
+      --r-md: 18px;
+      --r-lg: 28px;
+      --r-xl: 40px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.25;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,253,245,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-text strong { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--text-dark); }
+    .nav-logo-text span { font-size: 11px; color: var(--text-soft); letter-spacing: 0.04em; font-weight: 500; }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--sage-dark); }
+
+    .nav-cta {
+      background: var(--sage);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--sage-dark) !important; transform: translateY(-1px); }
+
+    .nav-hamburger { display: none; cursor: pointer; font-size: 22px; color: var(--text-dark); background: none; border: none; }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 520px;
+      height: 520px;
+      background: var(--pale-yellow);
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 380px;
+      height: 380px;
+      background: var(--sage-light);
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(90,138,73,0.25);
+    }
+
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      background: var(--sage);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sage-dark);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-mid);
+      max-width: 520px;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .hero-body {
+      font-size: 0.97rem;
+      color: var(--text-soft);
+      max-width: 480px;
+      margin-bottom: 2.25rem;
+      font-weight: 500;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sage);
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(127,176,105,0.35);
+    }
+    .btn-primary:hover { background: var(--sage-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(127,176,105,0.4); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text-mid);
+      font-family: 'Quicksand', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--sage); color: var(--sage-dark); background: var(--sage-light); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-stat { display: flex; flex-direction: column; }
+    .hero-stat strong { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--text-dark); line-height: 1; }
+    .hero-stat span { font-size: 12px; color: var(--text-soft); font-weight: 600; letter-spacing: 0.04em; margin-top: 3px; }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .hero-img-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: var(--sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--sage-dark);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-img-placeholder .big-emoji { font-size: 80px; line-height: 1; }
+    .hero-img-placeholder p { font-size: 13px; font-weight: 600; color: var(--sage-dark); opacity: 0.7; }
+
+    .hero-card-float {
+      position: absolute;
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      animation: floatUpDown 4s ease-in-out infinite;
+    }
+
+    .hero-card-float.card-1 { bottom: 6%; left: -8%; animation-delay: 0s; }
+    .hero-card-float.card-2 { top: 8%; right: -5%; animation-delay: 1.5s; }
+
+    .hero-card-float .card-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .hero-card-float.card-1 .card-icon { background: var(--sunflower-light); }
+    .hero-card-float.card-2 .card-icon { background: var(--sky-light); }
+
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* SECTION WRAPPER */
+    section { padding: clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 6vw, 5rem); }
+
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 0.75rem;
+      background: var(--sage-light);
+      padding: 4px 14px;
+      border-radius: 50px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      color: var(--text-soft);
+      max-width: 580px;
+      font-weight: 500;
+      line-height: 1.75;
+    }
+
+    .section-header { margin-bottom: 3rem; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered .section-body { margin: 0 auto; }
+
+    /* WHY CHOOSE US / PILLARS */
+    .pillars { background: var(--warm-white); }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      background: #fff;
+      border-radius: var(--r-lg);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: var(--r-lg) var(--r-lg) 0 0;
+    }
+
+    .pillar-card.green::before { background: var(--sage); }
+    .pillar-card.yellow::before { background: var(--sunflower); }
+    .pillar-card.blue::before { background: var(--sky); }
+
+    .pillar-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+    .pillar-icon {
+      width: 54px; height: 54px;
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 1.25rem;
+    }
+    .pillar-card.green .pillar-icon { background: var(--sage-light); }
+    .pillar-card.yellow .pillar-icon { background: var(--sunflower-light); }
+    .pillar-card.blue .pillar-icon { background: var(--sky-light); }
+
+    .pillar-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .pillar-card p { font-size: 0.92rem; color: var(--text-soft); font-weight: 500; line-height: 1.7; }
+
+    /* CURRICULUM */
+    .curriculum { background: var(--cream); }
+
+    .curriculum-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .tabs { display: flex; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
+
+    .tab-btn {
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-soft);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--sage);
+      color: #fff;
+      border-color: var(--sage);
+    }
+
+    .tab-btn:hover:not(.active) { border-color: var(--sage); color: var(--sage-dark); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .tab-panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-dark);
+    }
+
+    .tab-meta {
+      display: inline-block;
+      background: var(--sunflower-light);
+      color: #8A5E10;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .tab-panel p { font-size: 0.95rem; color: var(--text-soft); font-weight: 500; margin-bottom: 1rem; }
+
+    .tab-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .tab-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+
+    .tab-list .check {
+      width: 20px; height: 20px;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .curriculum-right { position: relative; }
+
+    .domains-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .domain-card {
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 1.4rem 1.25rem;
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .domain-card:hover { transform: translateY(-3px); }
+
+    .domain-icon {
+      font-size: 28px;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .domain-card h4 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .domain-card p { font-size: 12px; color: var(--text-soft); font-weight: 500; line-height: 1.55; }
+
+    /* ABOUT */
+    .about { background: var(--sage-light); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .philosophy-points { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .philosophy-point {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(127,176,105,0.2);
+      transition: box-shadow 0.2s;
+    }
+    .philosophy-point:hover { box-shadow: var(--shadow-sm); }
+
+    .philosophy-num {
+      width: 32px; height: 32px;
+      background: var(--sage);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .philosophy-point h4 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+
+    .philosophy-point p { font-size: 13px; color: var(--text-soft); font-weight: 500; }
+
+    .about-image-card {
+      width: 100%;
+      height: 200px;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .about-image-card:hover img { transform: scale(1.05); }
+
+    .about-features { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .feature-card {
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+    .feature-emoji { font-size: 32px; line-height: 1; flex-shrink: 0; }
+
+    .feature-card h4 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .feature-card p { font-size: 13px; color: var(--text-soft); font-weight: 500; line-height: 1.6; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--cream); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--r-lg);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    .testimonial-stars { color: var(--sunflower); font-size: 16px; letter-spacing: 2px; }
+
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-weight: 500;
+      line-height: 1.75;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .author-name { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+    .author-location { font-size: 12px; color: var(--text-soft); font-weight: 500; }
+
+    /* FACILITIES */
+    .facilities { background: var(--warm-white); }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .facility-card {
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 0 0 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+
+    .facility-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .facility-img { width: 100%; height: 150px; overflow: hidden; }
+    .facility-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .facility-card:hover .facility-img img { transform: scale(1.1); }
+    .facility-card .fac-icon { font-size: 28px; display: block; }
+    .facility-card h4 { font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+    .facility-card p { font-size: 12px; color: var(--text-soft); font-weight: 500; padding: 0 1rem; }
+
+    /* ADMISSIONS */
+    .admissions { background: var(--sage); position: relative; overflow: hidden; }
+
+    .admissions::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 350px; height: 350px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+    .admissions::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    .admissions-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .admissions .section-label { background: rgba(255,255,255,0.2); color: #fff; }
+    .admissions .section-title { color: #fff; }
+    .admissions .section-body { color: rgba(255,255,255,0.8); max-width: 100%; }
+
+    .process-steps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+
+    .process-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .process-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 38px;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .step-num {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--sage-dark);
+      flex-shrink: 0;
+    }
+
+    .step-num .step-icon { font-size: 16px; }
+
+    .process-step h4 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+      margin-top: 6px;
+    }
+
+    .process-step p { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 500; }
+
+    .info-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+
+    .info-card {
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--r-md);
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .info-card h4 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .info-card p { font-size: 14px; color: #fff; font-weight: 600; }
+
+    .info-card .time-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .time-item { display: flex; flex-direction: column; gap: 2px; }
+    .time-item .label { font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .time-item .value { font-size: 14px; color: #fff; font-weight: 700; }
+
+    /* CONTACT */
+    .contact { background: var(--cream); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-form {
+      background: #fff;
+      border-radius: var(--r-xl);
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .form-subtitle { font-size: 14px; color: var(--text-soft); font-weight: 500; margin-bottom: 1.75rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--sage);
+      background: #fff;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--sage);
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(127,176,105,0.35);
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover { background: var(--sage-dark); transform: translateY(-2px); }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-info-card {
+      background: #fff;
+      border-radius: var(--r-md);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon-wrap {
+      width: 44px; height: 44px;
+      background: var(--sage-light);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-info-card h4 { font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 700; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+    .contact-info-card p { font-size: 14px; color: var(--text-dark); font-weight: 600; }
+
+    .map-container {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem clamp(1.5rem, 6vw, 5rem) 2rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-brand p { font-size: 13px; font-weight: 500; line-height: 1.7; max-width: 280px; }
+
+    .footer-col h4 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+    .footer-col ul a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .footer-bottom a { color: var(--sage); text-decoration: none; }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--sage-dark);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: none;
+    }
+
+    .toast.show { transform: translateX(-50%) translateY(0); display: block; }
+
+    /* MOBILE NAV */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text-dark); text-decoration: none; font-weight: 700; font-family: 'Playfair Display', serif; }
+    .mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; cursor: pointer; background: none; border: none; color: var(--text-dark); }
+
+    /* SOCIAL GALLERY */
+    .social-section { background: var(--cream); text-align: center; }
+    .social-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .social-gallery-item {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-gallery-item:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-top: 1.5rem;
+    }
+    .social-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(220,39,67,0.3); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; min-height: auto; }
+      .hero::before, .hero::after { display: none; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { display: none; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .curriculum-inner { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+      .admissions-inner { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+      .nav-cta-desktop { display: none; }
+      .nav-hamburger { display: block; }
+      .form-row { grid-template-columns: 1fr; }
+      .domains-grid { grid-template-columns: 1fr 1fr; }
+      .social-gallery { grid-template-columns: repeat(2, 1fr); }
+      .curriculum-inner .curriculum-right div[style*="flex:1"] { height: 80px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .facilities-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { gap: 1rem; }
+      .hero-card-float { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 100 100">
-                        <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="5" fill="none"/>
-                        <circle cx="40" cy="45" r="6" fill="white"/>
-                        <circle cx="60" cy="45" r="6" fill="white"/>
-                        <path d="M40 62 Q50 72 60 62" stroke="white" stroke-width="4" fill="none"/>
-                    </svg>
-                </div>
-                Little Hope
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="curriculum.html">Curriculum</a></li>
-                <li><a href="admissions.html">Admissions</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="contact.html" class="btn btn-primary">Book Free Tour</a>
-            </div>
-            <button class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <div class="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="curriculum.html">Curriculum</a>
-        <a href="admissions.html">Admissions</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn btn-primary mt-lg">Book Free Tour</a>
+<!-- NAV -->
+<nav id="top">
+  <a href="#top" class="nav-logo">
+    <div class="nav-logo-icon">🌱</div>
+    <div class="nav-logo-text">
+      <strong>Little Hope</strong>
+      <span>Play School, Jasidih</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#admissions">Admissions</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Tour</a></li>
+  </ul>
+  <button class="nav-hamburger" id="menuBtn" aria-label="Open navigation">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="menuClose">✕</button>
+  <a href="#about" onclick="closeMobileMenu()">About Us</a>
+  <a href="#curriculum" onclick="closeMobileMenu()">Curriculum</a>
+  <a href="#facilities" onclick="closeMobileMenu()">Facilities</a>
+  <a href="#admissions" onclick="closeMobileMenu()">Admissions</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: clamp(3rem,8vw,6rem);">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Play School in Jasidih
+    </div>
+    <h1>Where <em>Play</em> Meets<br>Potential.</h1>
+    <p class="hero-sub">Nurturing curious minds and building confident futures through compassionate, child-led learning.</p>
+    <p class="hero-body">Give your child the foundation they need to shine. We blend proven academic concepts with the joy of discovery, ensuring every day is an adventure.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book Your Free Tour</a>
+      <a href="#curriculum" class="btn-secondary">View Curriculum</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>2.5–5.5</strong>
+        <span>Age Range (Years)</span>
+      </div>
+      <div class="hero-stat">
+        <strong>8:30 AM</strong>
+        <span>Drop-Off Starts</span>
+      </div>
+      <div class="hero-stat">
+        <strong>3:30 PM</strong>
+        <span>Pick-Up Time</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="hero-img-main">
+        <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=750&fit=crop" alt="Happy children playing and learning">
+      </div>
+      <div class="hero-card-float card-1">
+        <div class="card-icon">🌟</div>
+        <div>
+          <div style="font-size:11px;color:var(--text-soft);font-weight:600;">Learning Style</div>
+          <div>Child-Led Play</div>
+        </div>
+      </div>
+      <div class="hero-card-float card-2">
+        <div class="card-icon">🛡️</div>
+        <div>
+          <div style="font-size:11px;color:var(--text-soft);font-weight:600;">Campus</div>
+          <div>Safety-First Design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="pillars" id="why">
+  <div class="section-header centered">
+    <div class="section-label">Why Parents Love Us</div>
+    <h2 class="section-title">Built on Three Simple Beliefs</h2>
+    <p class="section-body">Every decision we make—from classroom design to teaching approach—flows from these three core commitments to your child.</p>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-card green">
+      <div class="pillar-icon">🌿</div>
+      <h3>Holistic Growth</h3>
+      <p>We don't just teach letters; we nurture whole human beings. Our curriculum focuses equally on cognitive, motor, and emotional intelligence, ensuring balanced, confident development.</p>
+    </div>
+    <div class="pillar-card yellow">
+      <div class="pillar-icon">💛</div>
+      <h3>Safe & Loving Environment</h3>
+      <p>We are dedicated to being the safest and most nurturing space for young learners in Jasidih. Our campus is designed with safety first, allowing curiosity to flourish worry-free.</p>
+    </div>
+    <div class="pillar-card blue">
+      <div class="pillar-icon">👩‍🏫</div>
+      <h3>Experienced Mentors</h3>
+      <p>Our educators are passionate, certified specialists in early childhood care. We teach from the heart, providing a supportive, loving, and highly engaged learning atmosphere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">More Than a School.<br>A Foundation for Life.</h2>
+      <p class="section-body">At Little Hope, we don't just prepare children for the next grade; we prepare them for life. We believe that every child carries an infinite seed of potential, and our mission is to cultivate that seed in a safe, joyful, and inspiring environment.</p>
+      <div class="philosophy-points">
+        <div class="philosophy-point">
+          <div class="philosophy-num">1</div>
+          <div>
+            <h4>Compassionate Care</h4>
+            <p>We prioritize emotional and social development first. A child's emotional safety is the prerequisite for any academic success.</p>
+          </div>
+        </div>
+        <div class="philosophy-point">
+          <div class="philosophy-num">2</div>
+          <div>
+            <h4>Integrated Learning</h4>
+            <p>Our curriculum is woven into daily play—children learn numeracy while building blocks and literacy through dramatic role-play.</p>
+          </div>
+        </div>
+        <div class="philosophy-point">
+          <div class="philosophy-num">3</div>
+          <div>
+            <h4>Community Roots</h4>
+            <p>We view ourselves as an extension of the Jasidih family, collaborating with parents at every step of their child's journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-features">
+      <div class="about-image-card">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=300&fit=crop" alt="Children learning together" loading="lazy">
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">🌳</span>
+        <div>
+          <h4>Nature Exploration Corner</h4>
+          <p>Our dedicated outdoor zone is a learning laboratory — children engage in sensory play, gardening, and outdoor science.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">📖</span>
+        <div>
+          <h4>Cultural Storytelling Focus</h4>
+          <p>We weave the rich tapestry of Bengali folklore and culture into daily lessons. Storytelling enhances language arts and cultural identity.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">🏖️</span>
+        <div>
+          <h4>Garden & Nature Play</h4>
+          <p>Designed for deep, mindful play — children explore textures, plant seeds, and watch things grow in our beautiful garden space.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="curriculum-inner">
+    <div>
+      <div class="section-label">Our Programs</div>
+      <h2 class="section-title">Learning Through Wonder, Not Workbooks.</h2>
+      <p class="section-body">At Little Hope, the most profound learning happens during play. Our child-led model uses play-based activities incorporating nature, art, and exploration to make every concept come alive.</p>
+
+      <div class="tabs" style="margin-top:2rem;">
+        <button class="tab-btn active" onclick="showTab('toddler', this)">Toddler (Ages 2–3)</button>
+        <button class="tab-btn" onclick="showTab('prek', this)">Pre-K (Ages 4–5)</button>
+      </div>
+
+      <div id="tab-toddler" class="tab-panel active">
+        <div class="tab-meta">Ages 2 – 3 Years</div>
+        <h3>Sensory Exploration & Motor Skills</h3>
+        <p>Building confidence, mastering basic self-help skills, and developing sensory processing through joyful guided play.</p>
+        <ul class="tab-list">
+          <li><span class="check">✓</span>Guided sensory bins and finger painting</li>
+          <li><span class="check">✓</span>Climbing structures and balance activities</li>
+          <li><span class="check">✓</span>Fine motor skills — stacking, grasping, threading</li>
+          <li><span class="check">✓</span>Large motor skills — running, balancing, jumping</li>
+          <li><span class="check">✓</span>Rhythm-based play and music exploration</li>
+          <li><span class="check">✓</span>Goal: Curiosity, independence, sensory integration</li>
+        </ul>
+      </div>
+
+      <div id="tab-prek" class="tab-panel">
+        <div class="tab-meta">Ages 4 – 5 Years</div>
+        <h3>Cognitive & Language Mastery</h3>
+        <p>Preparing for formal schooling while maintaining a playful, exploratory spirit and love of learning.</p>
+        <ul class="tab-list">
+          <li><span class="check">✓</span>Dramatic play (mini-store, role-playing) for numeracy</li>
+          <li><span class="check">✓</span>Interactive storytelling and phonics</li>
+          <li><span class="check">✓</span>Math concepts via manipulatives (not worksheets)</li>
+          <li><span class="check">✓</span>Structured art projects for creative expression</li>
+          <li><span class="check">✓</span>Social-emotional leadership development</li>
+          <li><span class="check">✓</span>Goal: Critical thinking, literacy, and leadership</li>
+        </ul>
+      </div>
     </div>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="badge badge-secondary">Play School in Jasidih</span>
-                    <h1>Where <span>Play Meets</span> Potential</h1>
-                    <p>Nurturing curious minds and building confident futures through compassionate, child-led learning. Give your child the foundation they need to shine!</p>
-                    <div class="hero-btns">
-                        <a href="contact.html" class="btn btn-primary btn-lg">
-                            Book Your Free Tour Today
-                        </a>
-                        <a href="curriculum.html" class="btn btn-secondary btn-lg">
-                            View Our Curriculum
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=450&fit=crop" alt="Happy children playing and learning">
-                </div>
-            </div>
+    <div class="curriculum-right">
+      <div style="margin-bottom:1.25rem;">
+        <div class="section-label">Core Domains</div>
+        <h3 style="font-size:1.3rem;color:var(--text-dark);margin-top:0.5rem;">What We Nurture Every Day</h3>
+      </div>
+      <div class="domains-grid">
+        <div class="domain-card">
+          <span class="domain-icon">📚</span>
+          <h4>Language Arts & Literacy</h4>
+          <p>Through imaginative role-play and shared reading, children discover the magic of communication.</p>
         </div>
-    </section>
-
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Why Parents Love Us</span>
-                <h2>Why Choose Little Hope?</h2>
-                <p>We believe every child is unique, and our approach reflects that belief. Here's what sets us apart.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon card-icon-pink">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-                    <h3>Holistic Growth</h3>
-                    <p>We don't just teach letters; we nurture whole human beings. Our curriculum focuses equally on cognitive, motor, and emotional intelligence, ensuring balanced, confident development.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon card-icon-teal">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                    </div>
-                    <h3>Safe & Loving</h3>
-                    <p>We are dedicated to being the safest and most nurturing space for young learners in Jasidih. Our campus is designed with safety first, allowing curiosity to flourish worry-free.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon card-icon-yellow">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                        </svg>
-                    </div>
-                    <h3>Experienced Mentors</h3>
-                    <p>Our educators are passionate, certified specialists in early childhood care. We teach from the heart, providing a supportive, loving, and highly engaged learning atmosphere.</p>
-                </div>
-            </div>
+        <div class="domain-card">
+          <span class="domain-icon">🔬</span>
+          <h4>Cognitive & STEAM</h4>
+          <p>Fun experiments and problem-solving with natural materials ignite scientific curiosity.</p>
         </div>
-    </section>
-
-    <section class="section section-soft">
-        <div class="container">
-            <div class="grid-2">
-                <div>
-                    <span class="section-label">Our Approach</span>
-                    <h2 style="font-size: 32px; margin-bottom: 16px;">Learning Through Wonder, Not Workbooks</h2>
-                    <p class="text-mute" style="font-size: 17px; line-height: 1.8; margin-bottom: 20px;">At Little Hope, we believe that the most profound learning happens during play. Our Child-led learning model utilizes play-based activities, incorporating elements of nature, art, and exploration to make every subject come alive.</p>
-                    <p class="text-mute" style="font-size: 17px; line-height: 1.8; margin-bottom: 24px;">From dramatic play that builds empathy to hands-on projects that ignite scientific curiosity, your child's journey is designed to be joyful and meaningful.</p>
-                    <a href="curriculum.html" class="btn btn-primary">Explore Our Curriculum</a>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=380&fit=crop" alt="Child learning through play" style="border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-                </div>
-            </div>
+        <div class="domain-card">
+          <span class="domain-icon">💖</span>
+          <h4>Emotional Intelligence</h4>
+          <p>Daily circle time and role-play help children identify feelings, build empathy, and practice negotiation.</p>
         </div>
-    </section>
-
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Parent Reviews</span>
-                <h2>What Parents Say</h2>
-                <p>Hear from families in our community about their Little Hope experience.</p>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <p>"Our child genuinely loves going to Little Hope. The staff are so caring, and we feel constantly updated on their development. Thank you for making learning feel like play!"</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">PS</div>
-                        <div class="testimonial-info">
-                            <h4>Priya Sharma</h4>
-                            <span>Jasidih</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"As a parent, I was worried about the switch. But the environment is so calm and engaging. It's the best early childhood education we could have asked for."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">RM</div>
-                        <div class="testimonial-info">
-                            <h4>Rahul Mehra</h4>
-                            <span>Jasidih</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The focus on holistic development is what sets us apart. They genuinely care about the child, not just the grades."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">NB</div>
-                        <div class="testimonial-info">
-                            <h4>Neha Bansal</h4>
-                            <span>Jasidih</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="domain-card">
+          <span class="domain-icon">🏃</span>
+          <h4>Physical & Motor Skills</h4>
+          <p>From grasping a crayon to racing across the playground — we build both fine and gross motor strength.</p>
         </div>
-    </section>
-
-    <section class="section section-soft">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Follow Us</span>
-                <h2>See Our Happy Little Ones</h2>
-                <p>Follow our journey on Instagram for daily moments of joy, learning, and growth!</p>
-            </div>
-            <div style="text-align: center;">
-                <a href="https://instagram.com/little_hope_jasidih" target="_blank" class="social-btn">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                    </svg>
-                    Follow @little_hope_jasidih
-                </a>
-            </div>
-            <div class="social-gallery">
-                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=300&h=200&fit=crop" alt="Children playing">
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&h=200&fit=crop" alt="Child learning">
-                <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=300&h=200&fit=crop" alt="Toddler activity">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop" alt="Art activity">
-            </div>
+      </div>
+      <div style="margin-top:1.5rem; display:flex; gap:0.75rem; align-items:stretch;">
+        <div style="flex:1; border-radius:var(--r-sm); overflow:hidden; height:110px;">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=220&fit=crop" alt="Children reading" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
         </div>
-    </section>
-
-    <section class="section section-white">
-        <div class="container">
-            <div class="grid-2">
-                <div>
-                    <span class="section-label">Visit Us</span>
-                    <h2 style="font-size: 32px; margin-bottom: 16px;">Join Our Little Hope Family</h2>
-                    <p class="text-mute" style="font-size: 17px; line-height: 1.8; margin-bottom: 24px;">Located in the heart of Jasidih, Little Hope is easily accessible and surrounded by a supportive community. We invite you to visit us and experience the warmth of our learning environment.</p>
-                    <a href="contact.html" class="btn btn-primary">Get Directions & Contact Info</a>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.5!2d86.6458!3d24.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f10530f6f5f0c7%3A0x6b4f4c5a9e3d1f2a!2sJasidih%20School!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
+        <div style="flex:1; border-radius:var(--r-sm); overflow:hidden; height:110px;">
+          <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=300&h=220&fit=crop" alt="Children playing" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo" style="color: var(--on-primary);">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 100 100">
-                                <path d="M30 55 Q50 25 70 55" stroke="white" stroke-width="5" fill="none"/>
-                                <circle cx="40" cy="45" r="6" fill="white"/>
-                                <circle cx="60" cy="45" r="6" fill="white"/>
-                            </svg>
-                        </div>
-                        Little Hope
-                    </a>
-                    <p>Nurturing curious minds and building confident futures through compassionate, child-led learning in Jasidih.</p>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="curriculum.html">Curriculum</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li>Arogya Bhawan Road</li>
-                        <li>Opposite Jasidih School</li>
-                        <li>Jasidih, India 814142</li>
-                        <li style="margin-top: 12px;"><a href="tel:+918210974339">+91 8210974339</a></li>
-                        <li><a href="mailto:littlehopeplayschool@gmail.com">littlehopeplayschool@gmail.com</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Follow Us</h4>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/little_hope_jasidih" target="_blank">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>2026 Little Hope Play School, Jasidih. All rights reserved.</p>
-                <p>Made with love for our little ones</p>
-            </div>
+        <div style="flex:1; border-radius:var(--r-sm); overflow:hidden; height:110px;">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=220&fit=crop" alt="Art activity" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
         </div>
-    </footer>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="#contact" class="btn-primary" style="display:inline-flex;">Download Curriculum Guide</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="js/script.js"></script>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header centered">
+    <div class="section-label">Parent Stories</div>
+    <h2 class="section-title">Voices from Our Jasidih Family</h2>
+    <p class="section-body">Nothing speaks louder than the words of parents who've seen their children grow, laugh, and thrive at Little Hope.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <blockquote>"Our child genuinely loves going to Little Hope. The staff are so caring, and we feel constantly updated on their development. Thank you for making learning feel like play!"</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:var(--blush-light);color:var(--blush);">PS</div>
+        <div>
+          <div class="author-name">Priya Sharma</div>
+          <div class="author-location">📍 Jasidih</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <blockquote>"As a parent, I was worried about the transition. But the environment is so calm and engaging. It's the best early childhood education we could have asked for."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:var(--sky-light);color:var(--sky);">RM</div>
+        <div>
+          <div class="author-name">Rahul Mehra</div>
+          <div class="author-location">📍 Jasidih</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <blockquote>"The focus on holistic development is what sets them apart. They genuinely care about the child, not just the grades. We couldn't be happier with the choice."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:var(--lavender-light);color:var(--lavender);">NB</div>
+        <div>
+          <div class="author-name">Neha Bansal</div>
+          <div class="author-location">📍 Jasidih</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL / INSTAGRAM -->
+<section class="social-section">
+  <div class="section-header centered">
+    <div class="section-label">Follow Us</div>
+    <h2 class="section-title">See Our Happy Little Ones</h2>
+    <p class="section-body">Follow our journey on Instagram for daily moments of joy, learning, and growth!</p>
+  </div>
+  <a href="https://instagram.com/little_hope_jasidih" target="_blank" class="social-btn">
+    Follow @little_hope_jasidih
+  </a>
+  <div class="social-gallery">
+    <div class="social-gallery-item">
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=300&h=200&fit=crop" alt="Children playing" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="social-gallery-item">
+      <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=300&h=200&fit=crop" alt="Kids running" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="social-gallery-item">
+      <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=300&h=200&fit=crop" alt="Music activity" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="social-gallery-item">
+      <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=300&h=200&fit=crop" alt="Creative play" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities" id="facilities">
+  <div class="section-header centered">
+    <div class="section-label">Our Space</div>
+    <h2 class="section-title">A Space Built for Discovery</h2>
+    <p class="section-body">Our facilities are intentionally designed to be warm, inviting, and flexible — allowing every learning style to thrive in a safe, inspiring environment.</p>
+  </div>
+  <div class="facilities-grid">
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop" alt="Bright classroom" loading="lazy">
+      </div>
+      <h4>🏫 Bright Classrooms</h4>
+      <p>Natural light, flexible learning stations, and age-appropriate furnishing</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Nap zone" loading="lazy">
+      </div>
+      <h4>😴 Quiet Nap Zone</h4>
+      <p>Dedicated rest area that respects natural rhythms of young learners</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Library" loading="lazy">
+      </div>
+      <h4>📚 Indoor Library</h4>
+      <p>A cozy, curated reading corner that sparks imagination and wonder</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=400&h=250&fit=crop" alt="Garden" loading="lazy">
+      </div>
+      <h4>🌿 Garden</h4>
+      <p>Dedicated green space where children connect with nature, plant seeds, and watch things grow</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=400&h=250&fit=crop" alt="Playground" loading="lazy">
+      </div>
+      <h4>🛝 Safe Playground</h4>
+      <p>Safety-certified, colorful outdoor play area for gross motor development</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop" alt="Nature corner" loading="lazy">
+      </div>
+      <h4>🌱 Nature Corner</h4>
+      <p>Outdoor learning lab with sensory play, gardening, and nature exploration</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=250&fit=crop" alt="Art studio" loading="lazy">
+      </div>
+      <h4>🎨 Art & Craft Studio</h4>
+      <p>Dedicated creative space for painting, sculpting, and artistic exploration</p>
+    </div>
+    <div class="facility-card">
+      <div class="facility-img">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop" alt="Secure campus" loading="lazy">
+      </div>
+      <h4>🔒 Secure Campus</h4>
+      <p>Secured entry points and supervised zones for total peace of mind</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section class="admissions" id="admissions">
+  <div class="admissions-inner">
+    <div>
+      <div class="section-label">Join Our Family</div>
+      <h2 class="section-title">Let the Little Hope Journey Begin</h2>
+      <p class="section-body">We are excited to welcome your family. The first step is simple, free, and completely pressure-free.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num"><span class="step-icon">✉️</span></div>
+          <div>
+            <h4>1. Inquire</h4>
+            <p>Fill out our enquiry form. We respond within 24 hours — always.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num"><span class="step-icon">💻</span></div>
+          <div>
+            <h4>2. Virtual Meet</h4>
+            <p>Schedule a personalized video chat with our Head Educator to ask all your questions.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num"><span class="step-icon">🏫</span></div>
+          <div>
+            <h4>3. Campus Visit</h4>
+            <p>Enjoy a complimentary tour of our beautiful facilities and meet our wonderful team.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num"><span class="step-icon">🌟</span></div>
+          <div>
+            <h4>4. Enrollment</h4>
+            <p>Complete registration and welcome your child into the Little Hope family!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="info-cards">
+        <div class="info-card">
+          <h4>Program Age Range</h4>
+          <p>Children aged 2.5 – 5.5 years · Toddler & Pre-K Programs</p>
+        </div>
+        <div class="info-card">
+          <h4>School Hours</h4>
+          <div class="time-row">
+            <div class="time-item">
+              <span class="label">Drop-Off</span>
+              <span class="value">8:30 – 9:00 AM</span>
+            </div>
+            <div class="time-item">
+              <span class="label">Pick-Up</span>
+              <span class="value">3:30 – 4:00 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>Admin Office Hours</h4>
+          <p>Monday – Friday, 9:00 AM to 5:00 PM</p>
+        </div>
+        <div class="info-card">
+          <h4>Documents Required</h4>
+          <p>Child's birth certificate, passport-size photos, proof of residence, and medical records.</p>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-flex;width:100%;justify-content:center;margin-top:0.5rem;background:#fff;color:var(--sage-dark);">Book Your Free Tour Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-form">
+      <h2 class="form-title">Send Us an Enquiry</h2>
+      <p class="form-subtitle">We'll get back to you within 24 hours. No pressure, just a warm conversation.</p>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parent Name *</label>
+            <input type="text" placeholder="Your full name" id="f-name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="+91 XXXXXXXXXX" id="f-phone" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="you@email.com" id="f-email" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Child's Age / Program *</label>
+            <select id="f-age" required>
+              <option value="">Select program</option>
+              <option>Toddler (Ages 2–3)</option>
+              <option>Pre-K (Ages 4–5)</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Tour Date</label>
+            <input type="date" id="f-date">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message / How did you hear about us?</label>
+          <textarea placeholder="Tell us anything you'd like us to know..." id="f-message"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Book Free Tour via WhatsApp</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <div style="margin-bottom:0.5rem;">
+        <div class="section-label">Contact & Location</div>
+        <h2 class="section-title" style="font-size:1.8rem;">Find Us in<br>the Heart of Jasidih</h2>
+        <p class="section-body" style="margin-top:0.75rem;">Located in a warm, accessible part of Jasidih, we're easy to reach and surrounded by a supportive community.</p>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">📍</div>
+        <div>
+          <h4>Address</h4>
+          <p>Little Hope Play School<br>Arogya Bhawan Road, Opposite Jasidih School<br>Jasidih, Jharkhand 814142</p>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 8210974339</p>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p>littlehopeplayschool@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">📸</div>
+        <div>
+          <h4>Instagram</h4>
+          <p>@little_hope_jasidih</p>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.5!2d86.6458!3d24.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f10530f6f5f0c7%3A0x6b4f4c5a9e3d1f2a!2sJasidih%20School!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>🌱 Little Hope Play School</h3>
+      <p>Nurturing curious minds and building confident futures through compassionate, child-led learning — right here in the heart of Jasidih.</p>
+      <p style="margin-top:1rem;font-size:12px;color:rgba(255,255,255,0.35);">littlehopeplayschool@gmail.com<br>+91 8210974339</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#curriculum">Toddler Program (2–3 yrs)</a></li>
+        <li><a href="#curriculum">Pre-K Program (4–5 yrs)</a></li>
+        <li><a href="#contact">Download Curriculum Guide</a></li>
+        <li><a href="#contact">Book a Free Tour</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Little Hope Play School, Jasidih. All rights reserved.</span>
+    <span>Made with 💚 for curious little minds.</span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">🎉 Opening WhatsApp... Please send the message!</div>
+
+<script>
+  // Tab functionality
+  function showTab(tab, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuClose = document.getElementById('menuClose');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+  });
+
+  menuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // Contact form with WhatsApp
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('f-name').value;
+      const phone = document.getElementById('f-phone').value;
+      const email = document.getElementById('f-email').value;
+      const age = document.getElementById('f-age').value;
+      const tourDate = document.getElementById('f-date').value;
+      const message = document.getElementById('f-message').value;
+
+      const whatsappMessage = `Hello! I'd like to inquire about Little Hope Play School.
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email}
+*Child's Age/Program:* ${age}
+*Preferred Tour Date:* ${tourDate || 'To be decided'}
+*Message:* ${message || 'None'}
+
+Looking forward to hearing from you!`;
+
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/918210974339?text=${encodedMessage}`;
+
+      window.open(whatsappURL, '_blank');
+
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      
+      contactForm.reset();
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    });
+  }
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
