@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelectorAll('.nav-links a');
-    const programTabs = document.querySelectorAll('.program-tab');
-    const programContents = document.querySelectorAll('.program-content');
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
-            this.classList.toggle('active');
         });
     }
 
@@ -19,17 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             if (mobileMenu) {
                 mobileMenu.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
             }
         });
     });
 
-    programTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const target = this.getAttribute('data-target');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const target = this.getAttribute('data-tab');
             
-            programTabs.forEach(t => t.classList.remove('active'));
-            programContents.forEach(c => c.classList.remove('active'));
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
             
             this.classList.add('active');
             const targetContent = document.getElementById(target);
@@ -38,22 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    animateElements.forEach(el => observer.observe(el));
 
     const testimonialSlider = document.querySelector('.testimonials-slider');
     if (testimonialSlider) {
@@ -96,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = '[ Sending... ]';
             submitBtn.disabled = true;
 
             const templateParams = {
@@ -114,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('formSuccess').style.display = 'block';
                     contactForm.reset();
                 }, function(error) {
-                    alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
+                    alert('[x] Sorry, there was an error. Please try again or contact us directly.');
                     console.log('EmailJS Error:', error);
                 })
                 .finally(function() {
@@ -127,22 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.background = 'rgba(253, 252, 252, 0.98)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.background = 'var(--canvas)';
         }
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
     });
 });
